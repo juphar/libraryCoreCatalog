@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+.GallerySearchPanel{
+
+    &__wrapper{
+        width: 100%;
+        height: 100%;
+    }
+
+    &__iframe{
+        width: 100%;
+        height: 100%;     
+        
+        &__min{
+            position: relative;
+            top: 150px;
+            min-width: 400px;
+            min-height: 400px;
+            z-index: 900;
+            opacity: 1;
+            transition: opacity 0.5s ease-in;
+        }
+
+        &__opaque{
+            position: relative;
+            top: 150px;
+            min-width: 400px;
+            min-height: 400px;
+            z-index: 900;
+            opacity: 0;
+        }
+    }
+
+    &__global-header{
+
+        width: 100%;
+        height: 60px;
+        background-color: #3d70b2;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        font-weight: 300;
+
+        b{
+            font-weight: 600;
+        }
+
+    }
+
+    &__container{
+        width: 100%;
+        height: calc(100% - 60px);
+        clear: both;
+        overflow: hidden;
+        padding: 10px 20px;
+
+        &__min{
+            width: 100%;
+            height: calc(100% - 60px);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &_background{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+
+            &_1{
+                background: url('https://1.cms.s81c.com/sites/default/files/2017-09-19/pearson.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                animation: zoom-animation 24s linear 0s infinite;
+                transform: translateZ(0);          
+            }
+
+            &_2{
+                background: url('https://www.ibm.com/blogs/watson/wp-content/uploads/2019/02/thinkpic.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                animation: zoom-animation 24s linear 12s infinite, delay-animation 12s;
+                transform: translateZ(0);
+            }
+            
+            &_mask{
+                width: 100%;
+                height: calc(100% - 60px);
+                position: fixed;
+                top: 60px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__a{
+        color: white;
+        font-size: 1.25rem;
+        line-height: 1.25;
+        font-weight: 300;
+        text-decoration: none;        
+    }
+}
+
+@keyframes zoom-animation {
+    0%   {transform: scale(1.0); opacity: 0;}
+    20%  {transform: scale(1.05); opacity: 1;}
+    40%  {transform: scale(1.1); opacity: 1;}    
+    50%  {transform: scale(1.1); opacity: 0;}
+    100% {transform: scale(1.1); opacity: 0;}
+}
+
+@keyframes delay-animation {
+    0%   {opacity: 0;}
+    100% {opacity: 0;}
+}

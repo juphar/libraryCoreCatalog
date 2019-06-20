@@ -1,0 +1,14 @@
+{
+  "name": "microapp-sample-platform",
+  "version": "1.0.0",
+  "description": "Node.js based microapp : sample-platform",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "IBM Watson Education",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "express": "4.16.3",
+    "winston": "2.4.3"
+  }
+}

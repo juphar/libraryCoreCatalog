@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<link rel="shortcut icon" href="images/favicon-watson.ico" type="image/x-icon">
+<title>IBM Watson Education Developer Cloud</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/smooth-scroll.js"></script>
+<script src="js/gumshoe.js"></script>
+<script src="js/iconic.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		smoothScroll.init({
+			offset : 0
+		});
+		gumshoe.init({
+			offset : 75
+		// Distance in pixels to offset calculations
+		});
+		wdcFunctions.repeatOften();
+	});
+	
+	let menuClick = function(e){
+		
+		let menu = document.getElementById('header__menu_dropdown');
+		if( menu.className === "header__menu_dropdown" ) menu.className = "header__menu_dropdown__show";
+		else menu.className = "header__menu_dropdown";		
+		
+	};
+
+	let linkClick = function(route){
+
+		parent.postMessage(route, "https://dev.watsoneduc.com");
+
+	};
+
+</script>
+<base target="_parent" />
+</head>
+<body class="language-theme-color">
+	<header class="wdc-header">
+		<div class="wdc-header--top">
+			<div class="wrapper" style="position:relative;">
+				<div class="nav-three-bar-menu" style="position: relative; top: 2px; padding:0 20px 0 0; cursor: pointer;">
+					<!-- From static assets  -->
+					<svg width="20" height="14" fill-rule="evenodd" fill="white" onclick="menuClick();" ><path d="M0 0h20v2H0zM0 6h20v2H0zM0 12h20v2H0z"></path></svg>
+				</div>
+				<h1 class="wdc-wordmark toc-ignore">
+					<a href="../"
+						class="main-nav--link active" data-dropdown="drop"
+						aria-controls="drop" aria-expanded="false"><span
+						class="arrow-bg">IBM Watson Education Developer Cloud</span></a>
+				</h1>
+				<nav class="top-bar language-theme-color" role="navigation">
+					<div class="top-bar-menu">
+						<!-- Right Nav Section -->
+						<!--
+						<ul class="first-nav">
+							<li class="first-nav--item"><a class="first-nav--button"
+								href="https://console.ng.bluemix.net/login?state=/catalog/%3Fcategory=watson">Sign
+									in to Bluemix</a></li>
+						</ul>
+						<ul class="mobile-nav">
+							<li class="nav-drawer-toggler">Menu</li>
+						</ul>
+						-->
+					</div>
+				</nav>
+				<div id="header__menu_dropdown" class="header__menu_dropdown">
+					<ul>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__divider">Catalog</li>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__nohover">Content Library</li>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__indent" onclick="linkClick('library-admin');">Administration</li>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__indent" onclick="linkClick('library-reports');">Reports</li>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__indent" onclick="linkClick('library-docs-search');">Docs - Search</li>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__indent" onclick="linkClick('library-api-core');">API - Core</li>
+						<li class="header__menu_dropdown_item header__menu_dropdown_item__indent" onclick="linkClick('library-api-recommendations');">API - Recommendations</li>
+					</ul>
+				</div>				
+			</div>
+		</div>
+	</header>
+
+	<!-- HERO BLOCK -->
+	<div class="hero whitespace">
+		<div class="wrapper">
+			<div class="hero-cont">
+				<h1 class="hero__title">Build with Watson</h1>
+				<h3>Enable cognitive computing features in your smarter education solutions using IBM
+					Watson Education Services.</h3>
+				<!-- <a
+					href="./services-catalog"
+					class="button">See the services</a> -->
+			</div>
+		</div>
+	</div>
+	<!-- END HERO BLOCK -->
+
+	<!-- FEATURED GALLERY BLOCK -->
+	<div class="featured-apis whitespace">
+		<div class="wrapper">
+			<div class="section-header">
+				<h2 class="chunky">Gallery</h2>
+			</div>
+			<div class="featured-apis__container">
+
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Cognitive Search</h3>
+						<p class="readable">Search Watson annotated contents using natural language</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="../#/gallery/search/"
+							class="btn featured-apis__card-btn">Experience Search</a>
+					</p>
+				</div>
+
+				<!--
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Cognitive Library Onboarding</h3>
+						<p class="readable">Ingest content and have Watson automatically annotate</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="../#/gallery/onboarding/"
+							class="btn featured-apis__card-btn">Ingest Content</a>
+					</p>
+				</div>
+				
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Cognitive Library Report</h3>
+						<p class="readable">View report on top searches</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="../#/gallery/report/"
+							class="btn featured-apis__card-btn">View Report</a>
+					</p>
+				</div>
+				-->
+
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Cognitive Library Recommendation</h3>
+						<p class="readable">Receive recommended content</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="../#/gallery/recommendation/"
+							class="btn featured-apis__card-btn">Receive recommendation</a>
+					</p>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- END FEATURED GALLERY BLOCK  -->
+
+	<!-- FEATURED API BLOCK -->
+	<!--
+	<div class="featured-apis whitespace">
+		<div class="wrapper">
+			<div class="section-header">
+				<h2 class="chunky">Platform APIs</h2>
+			</div>
+			<div class="featured-apis__container">
+
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Content Library</h3>
+						<p class="readable">Platform APIs for Cognitive Search and management of your contents</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="https://watsonedu-dev.us-south.containers.appdomain.cloud/content_library/api/v1/api_explorer/index.html"
+							class="btn featured-apis__card-btn">Swagger Doc</a>
+					</p>
+				</div>
+
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Content Library Reviews</h3>
+						<p class="readable">Platform APIs for content reviews</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="http://watsonedu-dev.us-south.containers.appdomain.cloud/api_explorer/index.html?spec_url=http://watsonedu-dev.us-south.containers.appdomain.cloud/content_library/api/v1/api_explorer/reviews_api.yaml"
+							class="btn featured-apis__card-btn">Swagger Doc</a>
+					</p>
+				</div>
+
+				<div class="featured-apis__card">
+					<div class="featured-apis__card-content">
+						<h3 class="featured-apis__card-title readable">Content Library Recommendations</h3>
+						<p class="readable">Platform APIs for content recommendations</p>
+					</div>
+					<p class="featured-apis__card-buttons">
+						<a
+							href="https://watsonedu-dev.us-south.containers.appdomain.cloud/documentation/api_explorer/index.html?spec_url=https%3A%2F%2Fwatsonedu-dev.us-south.containers.appdomain.cloud%2Fcontent_recommender%2Fapi_explorer%2Fapi.yaml"
+							class="btn featured-apis__card-btn">Swagger Doc</a>
+					</p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- END FEATURED API BLOCK  -->
+
+	<!-- SALESFORM BLOCK -->
+	<div class="help whitespace">
+		<div class="wrapper">
+			<div class="help-cont">
+				<h2>Watson Education for the Enterprise</h2>
+				<h3>Get started on the path to building a smarter education solutions with
+					an enterprise implementation of IBM Watson Education Developer Cloud.</h3>
+				<a class="button"
+					href="mailto:dtu@us.ibm.com">Contact IBM Watson Education</a>
+			</div>
+		</div>
+	</div>
+	<!-- END SALESFORM BLOCK -->
+
+	<footer class="site-footer">
+		<div class="wrapper">
+			<nav class="site-footer--nav">
+				<!--
+				<ul class="site-footer--nav-list">
+					<li class="site-footer--nav-list-item"><a
+						href="https://watson-education-developer-cloud.mybluemix.net/services-catalog"
+						class="site-footer--nav-list-item-link">APIs</a></li>
+					<li class="site-footer--nav-list-item"><a
+						href="https://watson-education-developer-cloud.mybluemix.net/doc"
+						class="site-footer--nav-list-item-link">Docs</a></li>
+					<li class="site-footer--nav-list-item"><a
+						href="https://watson-education-developer-cloud.mybluemix.net/developer-tools"
+						class="site-footer--nav-list-item-link">Developer Tools</a></li>
+					<li class="site-footer--nav-list-item"><a
+						href="https://watson-education-developer-cloud.mybluemix.net/starter-kits"
+						class="site-footer--nav-list-item-link">Starter Kits</a></li>
+				</ul>
+				-->
+				<ul class="site-footer--nav-list">
+					<li class="site-footer--nav-list-item"><a
+						href="https://www.ibm.com/watson/education/"
+						class="site-footer--nav-list-item-link">Watson Education</a></li>
+					<li class="site-footer--nav-list-item"><a
+						href="https://stackoverflow.com/questions/tagged/ibm-watson-education"
+						class="site-footer--nav-list-item-link">Stack Overflow</a></li>
+					<li class="site-footer--nav-list-item"><a
+						href="https://ibmwatson-education.slack.com/"
+						class="site-footer--nav-list-item-link">Slack Channel</a></li>
+					<li class="site-footer--nav-list-item"><a
+						href="https://twitter.com/ibmwatsoneducation"
+						class="site-footer--nav-list-item-link">Twitter</a></li>
+				</ul>
+				<!--
+				<ul class="site-footer--nav-list">
+					<li class="site-footer--nav-list-item"><span
+						class="site-footer--nav-list-title chunky">Need help?</span>
+						<p class="site-footer--nav-list-paragraph">We can help you
+							with technical issues or to determine which Watson API or product
+							is right for you.</p>
+						<div class="site-footer--nav-list-buttons">
+							<a
+								href="https://support.ng.bluemix.net/supportticket/?app=technicalsupport&amp;index=5"
+								class="site-footer--nav-list-button button">Get Support</a> <a
+								href="https://www-01.ibm.com/marketing/iwm/dre/signup?source=MAIL-watson"
+								class="site-footer--nav-list-button button">Talk to Sales</a>
+						</div></li>
+				</ul>
+				-->
+			</nav>
+			<nav class="site-footer--bottom-nav">
+				<ul class="site-footer--bottom-nav-list">
+					<li class="site-footer--bottom-nav-list-item eight-bar">IBM®</li>
+					<li class="site-footer--bottom-nav-list-item"><a
+						href="http://www.ibm.com/"
+						class="site-footer--bottom-nav-list-item-link" target="_blank">ibm.com</a>
+					</li>
+					<li class="site-footer--bottom-nav-list-item"><a
+						href="http://www.ibm.com/legal/us/en/"
+						class="site-footer--bottom-nav-list-item-link" target="_blank">Terms
+							of Use</a></li>
+					<li class="site-footer--bottom-nav-list-item"><a
+						href="http://www.ibm.com/privacy/us/en/"
+						class="site-footer--bottom-nav-list-item-link" target="_blank">Privacy
+							Policy</a></li>
+					<li class="site-footer--bottom-nav-list-item">© <script
+							type="text/javascript">
+						document.write(new Date().getFullYear());
+					</script> IBM
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</footer>
+
+</body>
+</html>

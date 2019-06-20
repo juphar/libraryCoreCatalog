@@ -1,0 +1,38 @@
+{
+  "name": "core-catalog",
+  "version": "1.0.0",
+  "description": "IBM Watson Education Catalog of Applications and Services.",
+  "scripts": {
+    "init": "npm install && npm run init:server && npm run copy:env && npm run init:sample && npm run init:ui",
+    "init:prod": "npm install && npm run init:ui",
+    "init:server": "cd ./app && npm install",
+    "copy:env": "cp ./resources/env.prop ./app && cd ./app && mv env.prop .env",
+    "init:sample": "cd ./sample-platform && npm install",
+    "init:ui": "cd ./ui-src && npm install",
+    "build": "npm-run-all -s -c build:ui clear:ui copy:ui",
+    "build:ui": "cd ./ui-src && npm run build",
+    "clear:ui": "rm -rf ./app/public",
+    "copy:ui": "cp -r ./ui-src/build ./app/public",
+    "start": "npm-run-all -p start:server start:sample",
+    "start:dev": "npm-run-all -p start:ui start:server start:sample",
+    "start:server": "cd ./app && node -r dotenv/config app-fm.js",
+    "start:sample": "cd ./sample-platform && node app.js",
+    "start:ui": "cd ./ui-src && npm start",
+    "test": "NODE_ENV=testing istanbul test ./node_modules/.bin/_mocha -- -R spec --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.ibm.com/watson-education/core-catalog.git"
+  },
+  "author": "IBM Watson Education",
+  "devDependencies": {},
+  "dependencies": {
+    "chai": "^3.5.0",
+    "dotenv": "^6.0.0",
+    "istanbul": "^0.4.4",
+    "mocha": "^2.5.3",
+    "npm-run-all": "^4.1.3",
+    "piping": "^1.0.0-rc.3",
+    "supertest": "^1.2.0"
+  }
+}

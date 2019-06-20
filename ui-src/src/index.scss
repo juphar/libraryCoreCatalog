@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// *********************
+// *** Carbon Config ***
+// *********************
+
+$css--font-face: true;
+$css--helpers: true;
+$css--body: true;
+$css--use-layer: true;
+$css--reset: true;
+$css--typography: true;
+$css--plex: true;
+
+// *********************
+// *** Carbon Global ***
+// *********************
+
+// Example path: @import "~carbon-components/scss/globals/scss/colors";
+
+@import "~carbon-components/scss/globals/scss/colors";
+@import "~carbon-components/scss/globals/scss/vars";
+@import "~carbon-components/scss/globals/scss/mixins";
+@import "~carbon-components/scss/globals/scss/layout";
+@import "~carbon-components/scss/globals/scss/layer";
+@import "~carbon-components/scss/globals/scss/spacing";
+@import "~carbon-components/scss/globals/scss/typography";
+@import "~carbon-components/scss/globals/scss/import-once";
+@import "~carbon-components/scss/globals/scss/css--reset";
+@import "~carbon-components/scss/globals/scss/css--font-face";
+@import "~carbon-components/scss/globals/scss/css--helpers";
+@import "~carbon-components/scss/globals/scss/css--body";
+@import "~carbon-components/scss/globals/scss/css--typography";
+@import "~carbon-components/scss/globals/grid/grid";
+
+// *************************
+// *** Carbon Components ***
+// *************************
+
+// Example path: @import "~carbon-components/scss/components/button/button";
+@import "~carbon-components/scss/components/button/button";
+@import "~carbon-components/scss/components/text-area/text-area";
+
+
+// ***********
+// *** App ***
+// ***********
+
+@import "./components/App/App";
