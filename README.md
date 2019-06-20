@@ -1,5 +1,4 @@
-# core-catalog
-IBM Watson Education Catalog of Applications and Services
+
 
 
 ## Quick start:
